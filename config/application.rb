@@ -13,8 +13,7 @@ module TestGuru
 
     config.time_zone = 'Ekaterinburg'
 
-    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-    config.i18n.default_locale = :ru    
+    VERSION = '1.0.0'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
