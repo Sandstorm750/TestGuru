@@ -5,4 +5,10 @@ class Test < ApplicationRecord
     .order('tests.title DESC')
     .pluck('tests.title')
   end
+
+  belongs_to :category
+  has_many :questions
+  has_many :user_tests
+  has_many :users, through: :user_tests
+  belongs_to :user
 end
