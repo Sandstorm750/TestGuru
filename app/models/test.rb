@@ -7,8 +7,9 @@ class Test < ApplicationRecord
   end
 
   belongs_to :category
+  belongs_to :user
   has_many :questions
   has_many :user_tests
   has_many :users, through: :user_tests
-  belongs_to :user
+
 end

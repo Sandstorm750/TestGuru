@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_165924) do
+ActiveRecord::Schema.define(version: 2019_12_01_151316) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text", null: false
     t.boolean "correct", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "question_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_165924) do
     t.string "topic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "test_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_165924) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "user_id"
   end
 
   create_table "user_tests", force: :cascade do |t|
