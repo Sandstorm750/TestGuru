@@ -3,11 +3,11 @@ class Answer < ApplicationRecord
 
   validate :validate_diapason, on: :create
 
-  scope :correct_answer, -> { where(correct: true)}
+  scope :correct, -> { where(correct: true)}
 
   private
 
   def validate_diapason
-    errors.add(:question) unless (0..4).include? question.answers.count
+    errors.add(:question) unless (0..3).include? question.answers.count
   end
 end

@@ -3,6 +3,5 @@ class Category < ApplicationRecord
 
   validates :title, presence: true
 
-  scope :increase, -> { order(title: :asc)}
-  #scope :show_title, -> (title){ where(title: title)}
+  default_scope { order(title: :asc) }  
 end
