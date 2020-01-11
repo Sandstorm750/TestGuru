@@ -17,7 +17,7 @@ class Test < ApplicationRecord
   scope :by_level, ->(level){ where(level: level) }
 
   def self.find_category(category)
-    joins(:category).where('categories.title = :category', category: category)
+    joins(:category).where(categories: { title: category })
   end
 
   def self.ordered_test_titles_by_category (category)
